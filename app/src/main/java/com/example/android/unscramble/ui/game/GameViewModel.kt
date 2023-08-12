@@ -14,6 +14,8 @@ class GameViewModel : ViewModel() {
     }
 
     private var _score = 0
+    val score: Int
+        get() = _score
 
     private var currentWordCount = 0
 
