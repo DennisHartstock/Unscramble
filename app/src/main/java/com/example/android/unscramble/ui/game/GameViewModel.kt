@@ -28,6 +28,19 @@ class GameViewModel : ViewModel() {
         Log.d("GameFragment", "GameViewModel destroyed!")
     }
 
+    private fun increaseScore() {
+        _score += SCORE_INCREASE
+    }
+
+    fun isUserWordCorrect(playerWord: String): Boolean {
+        if (playerWord.equals(currentWord, false)) {
+            increaseScore()
+            return true
+        }
+        return false
+    }
+
+
     /*
 * Updates currentWord and currentScrambledWord with the next word.
 */
